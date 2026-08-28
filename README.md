@@ -1,57 +1,88 @@
-# Smart Campus Sensor Data Analysis
+# Smart Campus Sensor Analytics
+### Indoor Air Quality, Occupancy Intelligence & Operational Decision Support
 
-## Ελληνικά
+This repository contains the complete data analysis and machine learning workflow developed for an undergraduate thesis focused on Smart Campus sensor data.
 
-Το παρόν αποθετήριο περιλαμβάνει τον κώδικα, τα notebooks και τα επεξεργασμένα δεδομένα που αναπτύχθηκαν στο πλαίσιο πτυχιακής εργασίας με αντικείμενο την ανάλυση και αξιοποίηση δεδομένων αισθητήρων σε περιβάλλον Smart Campus.
-
-Η εργασία επικεντρώνεται στην παρακολούθηση της ποιότητας του εσωτερικού αέρα, στην ανάλυση της χρήσης των χώρων και στην ανάπτυξη εφαρμοσμένων σεναρίων που συνδυάζουν περιβαλλοντικές μετρήσεις, δεδομένα πληρότητας και τεχνικές Μηχανικής Μάθησης.
-
-### Στόχοι του έργου
-
-Οι βασικοί στόχοι είναι:
-
-- προεπεξεργασία και ενοποίηση ετερογενών δεδομένων αισθητήρων,
-- διερευνητική ανάλυση των συνθηκών εσωτερικού περιβάλλοντος,
-- εκτίμηση πληρότητας και διόρθωση μετρήσεων people counter,
-- πρόβλεψη συγκέντρωσης CO₂ 30 λεπτά στο μέλλον,
-- υποστήριξη αποφάσεων φυσικού αερισμού,
-- εντοπισμός πιθανών περιπτώσεων ενεργειακής σπατάλης.
-
-### Χώροι μελέτης
-
-Η ανάλυση αφορά τις αίθουσες:
-
-- Room 2.3
-- Room 3.9
-- Room 4.9
-
-Η Room 4.9 διαθέτει την πληρέστερη διαμόρφωση αισθητήρων και χρησιμοποιείται στα περισσότερα προχωρημένα σενάρια.
+The project combines heterogeneous environmental and occupancy measurements to study indoor air quality, room usage, short-term CO₂ forecasting, natural ventilation support and potential lighting-related energy waste.
 
 ---
 
-## English
+## 🇬🇷 Ελληνικά
 
-This repository contains the code, notebooks and processed datasets developed as part of a thesis project focused on the analysis and exploitation of Smart Campus sensor data.
+### Περιγραφή έργου
 
-The project investigates indoor air quality, room usage and operational conditions through the combined use of environmental measurements, occupancy information and machine learning techniques.
+Το παρόν αποθετήριο περιλαμβάνει τα notebooks, τον κώδικα και τις βασικές ροές επεξεργασίας που αναπτύχθηκαν στο πλαίσιο πτυχιακής εργασίας με αντικείμενο την ανάλυση και αξιοποίηση δεδομένων αισθητήρων σε περιβάλλον Smart Campus.
 
-### Project Objectives
-
-The main objectives are:
-
-- preprocessing and integration of heterogeneous sensor data,
-- exploratory analysis of indoor environmental conditions,
-- occupancy estimation and people-counter correction,
-- 30-minute-ahead CO₂ forecasting,
-- natural ventilation decision support,
-- detection of potential energy-waste conditions.
-
-### Monitored Rooms
-
-The analysis focuses on:
+Η ανάλυση βασίζεται σε δεδομένα από τρεις πανεπιστημιακούς χώρους:
 
 - Room 2.3
 - Room 3.9
 - Room 4.9
 
-Room 4.9 provides the richest sensor configuration and is used in most of the advanced application scenarios.
+Η Room 4.9 διαθέτει την πληρέστερη διαμόρφωση αισθητήρων και αξιοποιείται στα περισσότερα προχωρημένα σενάρια.
+
+### Βασικοί στόχοι
+
+Το έργο περιλαμβάνει:
+
+- προεπεξεργασία και ενοποίηση δεδομένων αισθητήρων,
+- διερευνητική ανάλυση των συνθηκών εσωτερικού περιβάλλοντος,
+- εκτίμηση πληρότητας χώρων,
+- διόρθωση προβληματικών μετρήσεων people counter,
+- πρόβλεψη συγκέντρωσης CO₂ 30 λεπτά στο μέλλον,
+- υποστήριξη αποφάσεων φυσικού αερισμού,
+- εντοπισμό πιθανών περιπτώσεων ενεργειακής σπατάλης φωτισμού.
+
+---
+
+## 🇬🇧 English
+
+### Project Overview
+
+This repository contains the notebooks, code and analytical workflows developed as part of an undergraduate thesis focused on Smart Campus sensor data.
+
+The analysis is based on heterogeneous measurements collected from three monitored university rooms:
+
+- Room 2.3
+- Room 3.9
+- Room 4.9
+
+Room 4.9 provides the richest sensor configuration and is therefore used in most of the advanced application scenarios.
+
+### Main Objectives
+
+The project focuses on:
+
+- preprocessing and integration of heterogeneous sensor data,
+- exploratory analysis of indoor environmental conditions,
+- occupancy estimation,
+- correction of anomalous people-counter measurements,
+- 30-minute-ahead CO₂ forecasting,
+- natural ventilation decision support,
+- detection of potential lighting-related energy waste.
+
+---
+
+# Project Workflow
+
+The repository follows the complete analytical workflow of the thesis:
+
+```text
+Raw Sensor Data
+      │
+      ▼
+Data Preprocessing
+      │
+      ▼
+Processed Room Datasets
+      │
+      ▼
+Exploratory Data Analysis
+      │
+      ▼
+Applied Scenarios
+      │
+      ├── Occupancy Estimation
+      ├── CO₂ Forecasting
+      ├── Natural Ventilation Decision Support
+      └── Potential Energy Waste Detection
