@@ -326,6 +326,6 @@ Spyridon Kalliakmanis
 
 ---
 
-# License
+# Usage
 
-This repository is intended for academic and educational use.
+This repository is provided for academic and educational purposes.
