@@ -86,3 +86,198 @@ Applied Scenarios
       ├── CO₂ Forecasting
       ├── Natural Ventilation Decision Support
       └── Potential Energy Waste Detection
+# Analysis Stages
+
+## 1. Data Preprocessing
+
+Separate preprocessing notebooks are provided for Rooms 2.3, 3.9 and 4.9.
+
+The preprocessing stage includes:
+
+- timestamp parsing,
+- chronological ordering,
+- sensor-data integration,
+- consistency checks,
+- handling of room-specific variables,
+- creation of final processed datasets for analysis.
+
+---
+
+## 2. Exploratory Data Analysis
+
+Exploratory Data Analysis is performed separately for each monitored room.
+
+The analysis examines:
+
+- CO₂ concentration,
+- temperature,
+- humidity,
+- occupancy patterns,
+- PIR activity,
+- window status,
+- lighting conditions,
+- temporal usage patterns.
+
+---
+
+# Applied Scenarios
+
+## Scenario 1 – Occupancy Estimation and People Counter Correction
+
+This scenario investigates room occupancy using environmental and sensor-derived information.
+
+Several machine learning approaches are evaluated for occupancy estimation, while anomalous people-counter measurements are also identified and corrected where appropriate.
+
+### Key Result
+
+For Room 4.9, the Random Forest model achieved:
+
+- **RMSE: 2.42**
+
+The scenario also includes people-counter correction for Room 3.9.
+
+---
+
+## Scenario 2 – Air Quality Forecasting
+
+This scenario predicts indoor CO₂ concentration **30 minutes ahead**.
+
+The forecasting pipeline uses:
+
+- current environmental measurements,
+- occupancy information,
+- temporal variables,
+- lagged CO₂ features,
+- rolling statistics,
+- short-term CO₂ change features.
+
+A `HistGradientBoostingRegressor` is used as the final forecasting approach.
+
+A strict chronological split is applied in order to reduce temporal leakage.
+
+### Key Results
+
+| Room | RMSE | R² |
+|---|---:|---:|
+| Room 4.9 | 50.36 ppm | 0.857 |
+| Room 2.3 | 53.20 ppm | 0.865 |
+| Room 3.9 | 61.60 ppm | 0.846 |
+
+---
+
+## Scenario 3 – Natural Ventilation Decision Support
+
+The CO₂ forecasting methodology is combined with:
+
+- predicted future CO₂ concentration,
+- current occupancy,
+- current number of open windows.
+
+A rule-based mechanism determines whether additional windows should be opened.
+
+Historical window-opening events are also analyzed under stable occupancy and window conditions.
+
+### Key Results
+
+- Occupied observations analyzed: **6,304**
+- Candidate occupied-period window-opening events: **475**
+- Valid stable events: **34**
+
+The output is intended as decision support rather than automated building control.
+
+---
+
+## Scenario 4 – Potential Energy Waste Detection
+
+This scenario identifies possible lighting-related energy waste through an interpretable rule-based mechanism using:
+
+- desk occupancy,
+- PIR activity,
+- measured light level,
+- time of day.
+
+A room is considered confidently empty when no desk occupancy and no PIR activity are detected simultaneously.
+
+Nighttime empty-room observations with elevated lighting are treated as high-confidence potential-waste cases.
+
+Daytime observations are treated more cautiously because natural daylight may influence measured light levels.
+
+### Key Results
+
+- Total observations: **38,692**
+- Observations with detected light: **9,853**
+- Empty-room observations with detected light: **4,980**
+- High-confidence nighttime potential-waste observations: **1,124**
+- Daytime review cases: **876**
+- PIR activity without desk occupancy: **203**
+- Estimated cumulative high-confidence duration: **187.33 hours**
+
+---
+
+# Main Technologies
+
+The project is implemented in Python and primarily uses:
+
+- Python
+- pandas
+- NumPy
+- Matplotlib
+- scikit-learn
+- XGBoost
+- LightGBM
+- SciPy
+- joblib
+
+The notebooks were developed and executed in Google Colab / Jupyter environments.
+
+---
+
+# Reproducibility
+
+The recommended execution order is:
+
+1. Run the preprocessing notebooks.
+2. Generate the processed room datasets.
+3. Run the exploratory analysis notebooks.
+4. Run the four applied scenario notebooks.
+
+The scenario notebooks depend on the processed datasets generated during preprocessing.
+
+For machine learning tasks involving time-dependent data, chronological splitting is used where required in order to reduce the risk of temporal leakage.
+
+---
+
+# Methodological Notes
+
+The project includes several interpretation constraints:
+
+- CO₂ forecasts are short-term predictions and should not be interpreted as guaranteed future values.
+- Natural ventilation recommendations are rule-based decision-support outputs.
+- Historical window-opening analysis is observational and does not establish causality.
+- Potential energy waste is inferred from sensor patterns and does not represent direct measurement of electrical energy consumption.
+- No power-consumption measurements were available for the lighting system.
+
+---
+
+# Thesis Context
+
+This repository accompanies an undergraduate thesis focused on the analysis and exploitation of Smart Campus sensor data for:
+
+- indoor air quality monitoring,
+- occupancy analysis,
+- operational decision support,
+- intelligent use of heterogeneous building sensors.
+
+The overall objective is to demonstrate how raw sensor measurements can be transformed into reproducible analytical workflows and useful operational information.
+
+---
+
+# Author
+
+Spyridon Kalliakmanis 
+
+---
+
+# License
+
+This repository is intended for academic and educational use.
