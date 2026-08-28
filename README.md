@@ -86,6 +86,8 @@ Applied Scenarios
       ├── CO₂ Forecasting
       ├── Natural Ventilation Decision Support
       └── Potential Energy Waste Detection
+```text
+
 # Analysis Stages
 
 ## 1. Data Preprocessing
