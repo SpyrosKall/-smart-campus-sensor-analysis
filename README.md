@@ -1,4 +1,3 @@
-# smart-campus-sensor-analysis
 # Smart Campus Sensor Data Analysis
 
 ## Ελληνικά
