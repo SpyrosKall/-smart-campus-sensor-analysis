@@ -112,6 +112,28 @@ Applied Scenarios
       └── Potential Energy Waste Detection
 ```
 
+# Notebooks
+
+## Data Preprocessing
+
+- [Room 2.3 – Preprocessing](notebooks/preprocessing/01_room_2_3_preprocessing.ipynb)
+- [Room 3.9 – Preprocessing](notebooks/preprocessing/01_room_3_9_preprocessing.ipynb)
+- [Room 4.9 – Preprocessing](notebooks/preprocessing/01_room_4_9_preprocessing.ipynb)
+
+## Exploratory Data Analysis
+
+- [Room 2.3 – EDA](notebooks/exploratory_data_analysis/Exploratory_Data_Analysis_Room_2_3.ipynb)
+- [Room 3.9 – EDA](notebooks/exploratory_data_analysis/Exploratory_Data_Analysis_Room_3_9.ipynb)
+- [Room 4.9 – EDA](notebooks/exploratory_data_analysis/Exploratory_Data_Analysis_Room_4_9.ipynb)
+
+## Applied Scenarios
+
+- [Scenario 1 – Occupancy Estimation and People Counter Correction](notebooks/scenarios/Scenario_1_occupancy_estimation_and_people_counter_correction.ipynb)
+- [Scenario 2 – Air Quality Forecasting](notebooks/scenarios/Scenario_2_air_quality_forecasting.ipynb)
+- [Scenario 3 – Natural Ventilation Decision Support](notebooks/scenarios/Scenario_3_natural_ventilation_decision_support.ipynb)
+- [Scenario 4 – Potential Energy Waste Detection](notebooks/scenarios/Scenario_4_potential_energy_waste_detection.ipynb)
+
+  
 # Analysis Stages
 
 ## 1. Data Preprocessing
